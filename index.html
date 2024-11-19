@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Quiproquand</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" src="jquery-3.3.1.js"></script>
+  <title>Quiproquand</title>
 <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
 <h1>Quiproquand</h1>
-  <div>C'est quand  ?</div>
-  <include file="./12/2.html">
+  <div id="content">C'est quand  ?</div>
+  <script type="text/javascript">
+     $(function(){ $("#content").load("./12/2.html") });
+  </script>
+  <div w3-include-html="./12/2.html"></div>
 <!-- <script src="index.js"></script> -->
 </body>
 </html>
