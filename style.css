@@ -1,5 +1,11 @@
-h1 {
+body {
+	margin-left: 20px;
+	margin-right: 20px;
 	margin-top:20px;
+}
+
+h1 {
+	
 	margin-bottom:0px;
 }
 
@@ -7,4 +13,10 @@ h1 {
 	border: 0.5px solid black;
 	border-radius: 10px;
 	padding: 5px;
+}
+
+.lat-bar {
+	ul {
+		list-style-type: none;
+	}
 }
