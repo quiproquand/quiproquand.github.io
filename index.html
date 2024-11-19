@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>  
-  <title>Quiproquand</title>
-<!-- <link rel="stylesheet" href="style.css"> -->
-</head>
-<body>
-<h1>Quiproquand</h1>
-  <div id="content">C'est quand  ?</div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>  
+    <title>Quiproquand</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Quiproquand</h1>
+      <h2 id="ajd"></h2>
+        <div id="content">
+          /!\ alerte au bug /!\
+
+        </div>
+        
+    </div>
+  </body>
+  <script src="index.js"></script>
   <script type="text/javascript">
-     $(function(){ $("#content").load("./12/2.html") });
+    $(function(){ $("#content").load(getDateAsFilename()) });
+    document.getElementById("ajd").innerHTML =getFrenchDateAsString();
+
+    console.log(document.getElementsByClassName("post")[0]);
+    console.log(getDateAsFilename());
   </script>
-  <div>N'importe quoi ce truc...</div>
-<!--   <div w3-include-html="./12/2.html"></div> -->
-<!-- <script src="index.js"></script> -->
-</body>
+
 </html>
