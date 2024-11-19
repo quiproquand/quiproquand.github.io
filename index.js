@@ -41,3 +41,30 @@ function getDateAsFilename() {
 	
 	return `./${today.getMonth()+1}/${today.getDate()}.html`;
 }
+
+function getDaysBeforeNextMeetups() {
+	const today = new Date()
+	var nextMeetUp = null;
+	var index = 0;
+	console.log(today);
+	while (nextMeetUp ==  null && index < MEETUPS.length) {
+		console.log(MEETUPS[index]);
+		console.log(MEETUPS[index]-today);
+		if (today.getDate() == MEETUPS[index].getDate() && today.getMonth() == MEETUPS[index].getMonth() && today.getFullYear() == MEETUPS[index].getFullYear()) {
+			return "AJD !!!";
+		}
+		if (MEETUPS[index]-today < 0) {
+			index++;
+		} else {
+			nextMeetUp = MEETUPS[index];
+		}
+	}
+	if (nextMeetUp == null) {
+		return "JAMAIS ?!!?";
+	}
+	var totalDays = 0;
+	var m1 = today.getMonth();
+	return "wow";
+	
+	// return nextMeetUp;
+}
