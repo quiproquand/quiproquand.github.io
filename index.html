@@ -13,17 +13,20 @@
     <!-- <div class="container"> -->
       <div class="row">
         <div class="col-md-2 lat-bar">
-          <ul>
-            <li>PROCHAIN QUIPROQUI :
-              <span id="next-meet-up"></span></li>
-            <li>ARCHIVE</li>
-          </ul>
+          <div>//</div>
+          <div>PROCHAIN QUIPROQUI :</div>
+            <div id="next-meet-up"></div>
+          <div>//</div>
+          <div id="archive">ARCHIVE</div>
         </div>
-        <div class="col-md-10">
+      </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10 content-holder">
           <h1>Quiproquand</h1>
           <h2 id="ajd"></h2>
           <div id="content">
-              /!\ alerte au bug /!\
+              ...chargement...
 
           </div>
         </div>
@@ -33,12 +36,19 @@
   <script src="meetups.js"></script>
   <script src="index.js"></script>
   <script type="text/javascript">
-    $(function(){ $("#content").load(getDateAsFilename()) });
+    
+    $("#content").load(getDateAsFilename());
+    console.log(getDateAsFilename());
+
     document.getElementById("ajd").innerHTML =getFrenchDateAsString();
     document.getElementById("next-meet-up").innerHTML = getDaysBeforeNextMeetups();
+    // const posts = document.getElementsByClassName("post");
+    // console.log(posts);
+    // console.log(posts.length);
+    // console.log($("post"))
 
-    console.log(document.getElementsByClassName("post")[0]);
-    console.log(getDateAsFilename());
+
+    
   </script>
 
 </html>
