@@ -13,7 +13,7 @@
   <body>
     <!-- <div class="container"> -->
       <div class="row">
-        <div class="col-md-2 lat-bar">
+        <div class="col-md-2" id="lat-bar">
           <div>//</div>
           <div>PROCHAIN QUIPROQUI :</div>
             <div id="next-meet-up"></div>
@@ -47,6 +47,16 @@
     // console.log(posts);
     // console.log(posts.length);
     // console.log($("post"))
+
+    window.onresize = function() {
+      const newWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
+      if ((newWidth<770 && width >= 770) || (newWidth>=770 && width < 770) || (newWidth>=400 && width < 400) || (newWidth<400 && width >= 400)){
+        $("#content").load(getDateAsFilename());
+      }
+
+      width = newWidth;
+    };
 
 
     

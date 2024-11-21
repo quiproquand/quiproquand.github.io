@@ -8,18 +8,30 @@ function nodeToString (node) {
 
 
 // console.log("manip");
-const posts = document.getElementsByClassName("post");
+var posts = document.getElementsByClassName("post");
 // console.log(posts);
 // posts.item(0).innerHTML = "mdr";
 // console.log(posts.item(0));
 // console.log($(".post")[0])
 
 var cols = ["","",""];
+var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+console.log($("#lat-bar"));
+$("div#lat-bar")[0].style.visibility = "hidden";
+if (width < 400) {
+	cols = [""];
+}
+else if (width < 770) {
+	cols = ["",""];
+} else {
+	$("#lat-bar")[0].style.visibility = "visible";
+}
+
 for (var i = 0; i < posts.length; i++) {
 	posts.item(i).innerHTML = `<div class="author ${posts.item(i).dataset.author}">${posts.item(i).dataset.author}</div><div class="inner">${posts.item(i).innerHTML}</div>`;
 	cols[i%cols.length]+=nodeToString(posts.item(i));
 }
-const content = document.getElementById("content");
+var content = document.getElementById("content");
 var tmp = "";
 for (var i = 0; i < cols.length; i++) {
 	tmp+=`<div class="content-column">${cols[i]}</div>`;
@@ -28,6 +40,10 @@ content.innerHTML = tmp;
 
 $("div.imager").each(function(){
 	this.style.backgroundImage = `url(${this.dataset.img})`;
+});
+
+$(".content-column").each(function() {
+	this.style.width = `${100/cols.length}%`;
 });
 
 content.hidden = false;
