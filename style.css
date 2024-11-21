@@ -19,6 +19,7 @@ h1 {
 #content {
 	display: flex;
 	flex-wrap:wrap;
+	margin-right: 20px;
 /*	flex-direction: column;*/
 /*	align-items: flex-start;*/
 /*	grid-template-columns: repeat(3,1fr);*/
