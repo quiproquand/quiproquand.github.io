@@ -1,3 +1,12 @@
+function nodeToString (node) {
+   var tmpNode = document.createElement( "div" );
+   tmpNode.appendChild( node.cloneNode( true ) );
+   var str = tmpNode.innerHTML;
+   tmpNode = node = null; // prevent memory leaks in IE
+   return str;
+}
+
+
 // console.log("manip");
 const posts = document.getElementsByClassName("post");
 // console.log(posts);
@@ -5,6 +14,20 @@ const posts = document.getElementsByClassName("post");
 // console.log(posts.item(0));
 // console.log($(".post")[0])
 
-for (var i = posts.length - 1; i >= 0; i--) {
-	posts.item(i).innerHTML = `<div class="author ${posts.item(i).dataset.author}">${posts.item(i).dataset.author}</div><div class="inner"><div class="date">${posts.item(i).dataset.date}</div>${posts.item(i).innerHTML}</div>`;
+var cols = ["","",""];
+for (var i = 0; i < posts.length; i++) {
+	posts.item(i).innerHTML = `<div class="author ${posts.item(i).dataset.author}">${posts.item(i).dataset.author}</div><div class="inner">${posts.item(i).innerHTML}</div>`;
+	cols[i%cols.length]+=nodeToString(posts.item(i));
 }
+const content = document.getElementById("content");
+var tmp = "";
+for (var i = 0; i < cols.length; i++) {
+	tmp+=`<div class="content-column">${cols[i]}</div>`;
+}
+content.innerHTML = tmp;
+
+$("div.imager").each(function(){
+	this.style.backgroundImage = `url(${this.dataset.img})`;
+});
+
+content.hidden = false;
