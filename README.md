@@ -2,7 +2,7 @@
 
 Chaque jour a son propre fichier HTML. Ils sont tous classés par mois dans leur dossier respectif (valeur numérique du mois). Par exemple, le 6 février se trouve à l'emplacement `2/6.html`. Si le fichier n'existe pas, il faut le créer. **<span style="color:red">Attention, chaque fichier de ce type doit se terminer par la ligne :</span>**
 
-    <script src="manip.js"></script>
+    <script src="js/manip.js"></script>
 
 ## Ajouter un message simple
 Un simple message a cette forme :

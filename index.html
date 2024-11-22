@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>  
+    <script src="https://unpkg.com/color.js@1.2.0/dist/color.js"></script>
+    <script src="js/img.js"></script>
     <title>Quiproquand</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -32,10 +34,11 @@
           </div>
         </div>
       </div>
+      <div id="canvas-holder"></div>
     <!-- </div> -->
   </body>
   <script src="meetups.js"></script>
-  <script src="index.js"></script>
+  <script src="js/index.js"></script>
   <script type="text/javascript">
     
     $("#content").load(getDateAsFilename());
@@ -43,10 +46,6 @@
 
     document.getElementById("ajd").innerHTML =getFrenchDateAsString();
     document.getElementById("next-meet-up").innerHTML = getDaysBeforeNextMeetups();
-    // const posts = document.getElementsByClassName("post");
-    // console.log(posts);
-    // console.log(posts.length);
-    // console.log($("post"))
 
     window.onresize = function() {
       const newWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;

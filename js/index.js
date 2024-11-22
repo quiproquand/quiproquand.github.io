@@ -46,10 +46,7 @@ function getDaysBeforeNextMeetups() {
 	const today = new Date()
 	var nextMeetUp = null;
 	var index = 0;
-	console.log(today);
 	while (nextMeetUp ==  null && index < MEETUPS.length) {
-		console.log(MEETUPS[index]);
-		console.log(MEETUPS[index]-today);
 		if (today.getDate() == MEETUPS[index].getDate() && today.getMonth() == MEETUPS[index].getMonth() && today.getFullYear() == MEETUPS[index].getFullYear()) {
 			return "AJD !!!";
 		}

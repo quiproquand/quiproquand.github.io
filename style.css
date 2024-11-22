@@ -52,7 +52,7 @@ h1 {
 		margin-left:20px;*/
 /*		display: inline;*/
 /*		margin-bottom: -10px;*/
-		color: black;
+/*		color: black;*/
 /*		padding: 4px;*/
 /*		z-index: 0!important;*/
 /*		padding-bottom: 3.5px;*/
@@ -173,3 +173,17 @@ h1 {
 		background-color: white;
 	}
 }
+
+.dark {
+	.author {
+		color:black;
+	}
+}
+.bright {
+	.author {
+		color:white;
+	}
+}
+
+
+
