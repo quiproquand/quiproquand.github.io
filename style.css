@@ -17,6 +17,7 @@ h1 {
 }
 
 #content {
+	margin-top:15px;
 	display: flex;
 	flex-wrap:wrap;
 	margin-right: 20px;
@@ -31,10 +32,11 @@ h1 {
 }
 
 .post:hover {
-	animation: zoom-in-zoom-out 0.3s ease-in-out forwards;
+	animation: zoom-in 0.3s ease-in-out forwards;
 }
 
 .post {
+	animation: zoom-out 0.3s ease-in-out forwards;	
 	position:relative;
 	background-color: white;
 	padding: 10px;
@@ -106,7 +108,7 @@ h1 {
 /*		padding: 0px;*/
 	}
 
-	div {
+	.glowy {
 		background: linear-gradient(90deg, rgba(36,159,6,1) 0%, rgba(12,217,240,1) 33%, rgba(255,0,59,1) 66%, rgba(36,159,6,1) 100%);
 		font-weight: 900;
 		background-size: 200% auto;
@@ -116,7 +118,7 @@ h1 {
 		
 	}
 
-	div:hover {
+	.glowy:hover {
 		font-style: italic;
 		animation: animatedTextGradient 1.5s linear infinite;
 
@@ -131,14 +133,26 @@ h1 {
   }
 }
 
-@keyframes zoom-in-zoom-out {
+@keyframes zoom-in {
+	from {
+		scale:100%;
+	}
   to {
     scale: 102%;
   }
 }
 
+@keyframes zoom-out {
+	from {
+		scale:102%;
+	}
+  to {
+    scale: 100%;
+  }
+}
+
 .content-holder {
-	padding-top:30px;
+	padding-top:20px;
 	padding-left:30px;
 	margin:0px;
 /*	background-color: black;*/
@@ -185,5 +199,20 @@ h1 {
 	}
 }
 
+#calendar {
+	color:black;
+}
 
 
+/*input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}*/

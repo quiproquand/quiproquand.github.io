@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>  
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://unpkg.com/color.js@1.2.0/dist/color.js"></script>
     <script src="js/img.js"></script>
     <title>Quiproquand</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./img/favicon.png">
   </head>
@@ -16,11 +19,12 @@
     <!-- <div class="container"> -->
       <div class="row">
         <div class="col-md-2" id="lat-bar">
-          <div>//</div>
-          <div>PROCHAIN QUIPROQUI :</div>
-            <div id="next-meet-up"></div>
-          <div>//</div>
-          <div id="archive">ARCHIVE</div>
+          <div class="glowy">//</div>
+          <div class="glowy">PROCHAIN QUIPROQUI :</div>
+            <div class="glowy" id="next-meet-up"></div>
+          <div class="glowy">//</div>
+          <div class="glowy" id="archive">ARCHIVE</div><br>
+          <!-- <div id="Datepicker"></div> -->
         </div>
       </div>
       <div class="row">
@@ -56,6 +60,12 @@
 
       width = newWidth;
     };
+
+    // $(function() {
+    //     $("#Datepicker").datepicker({
+    //      numberOfMonths: 1
+    //     }); 
+    //   });
 
 
     
