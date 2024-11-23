@@ -34,9 +34,9 @@ var content = document.getElementById("content");
 var tmp = "";
 for (var i = 0; i < cols.length; i++) {
 	tmp+=`<div class="content-column">${cols[i]}</div>`;
+	// tmp+=cols[i];
 }
 content.innerHTML = tmp;
-
 
 
 $("div.imager").each(function(){
@@ -55,7 +55,9 @@ $("div.imager").each(function(){
 	const context = canvas.getContext('2d'); 
 	this.style.backgroundImage = `url(${this.dataset.img})`;
 	const img = new Image();        
-	img.src = this.dataset.img;        
+	img.src = this.dataset.img; 
+	const ratio = aspectRatio(img);
+	    
 	img.onload = () => {          
 		context.drawImage(img, 0, 0);      
 		const imgData = context.getImageData(0, 0, canvas.width, canvas.height);
@@ -70,6 +72,8 @@ $("div.imager").each(function(){
 		} else {
 			this.classList.add("dark");
 		}
+		const divWidth = this.clientWidth;
+		this.style.height = `${divWidth/ratio.width*ratio.height}px`;
 	};
 	
 });

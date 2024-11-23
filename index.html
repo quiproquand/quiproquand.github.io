@@ -51,11 +51,15 @@
     document.getElementById("ajd").innerHTML =getFrenchDateAsString();
     document.getElementById("next-meet-up").innerHTML = getDaysBeforeNextMeetups();
 
+    const thresholds = [400,770];
+
     window.onresize = function() {
       const newWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
-      if ((newWidth<770 && width >= 770) || (newWidth>=770 && width < 770) || (newWidth>=400 && width < 400) || (newWidth<400 && width >= 400)){
+      if ((newWidth<thresholds[1] && width >= thresholds[1]) || (newWidth>=thresholds[1] && width < thresholds[1]) || (newWidth>=thresholds[0] && width < thresholds[0]) || (newWidth<thresholds[0] && width >= thresholds[0])){
         $("#content").load(getDateAsFilename());
+      } else {
+        reloadImager();
       }
 
       width = newWidth;

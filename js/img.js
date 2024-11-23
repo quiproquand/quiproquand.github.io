@@ -98,6 +98,30 @@ function luminance(rgb){
 }
 
 
+function aspectRatio(image) {
+    const height = image.naturalHeight;
+    const width = image.naturalWidth;
+
+    const gcd = (...arr) => {
+        const _gcd = (x, y) => (!y ? x : gcd(y, x % y));
+        return [...arr].reduce((a, b) => _gcd(a, b));
+    };
+
+    const gcdResult = gcd(width, height);
+
+    return {width: width / gcdResult,height:height / gcdResult};
+}
+
+function reloadImager() {
+  $("div.imager").each(function(){
+    const img = new Image();        
+    img.src = this.dataset.img; 
+    const ratio = aspectRatio(img);
+    const divWidth = this.clientWidth;
+    this.style.height = `${divWidth/ratio.width*ratio.height}px`;
+  });
+}
+
 
 
 
