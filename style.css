@@ -219,24 +219,30 @@ h1 {
 	color:black;
 }
 
-/*.landscape {
-	grid-column-end: span 2;
-}*/
+#selected-date {
+	display: inline-flex;
 
-/*.portrait {
-	grid-row-end: span 2;
+	h2 {
+		padding-left:10px;
+		padding-right: 10px;
+	}
+
+	button {
+		border: none;
+		background-color: inherit;
+/*		font-weight: 1000;*/
+		font-size:20px;
+		margin:0;
+		padding:0;
+		position: relative;
+		top:-3px;
+	}
+
+	.act {
+		color:black;
+	}
+
+	.deact {
+		color:#dddddd;
+	}
 }
-*/
-
-/*input[type="date"]::-webkit-calendar-picker-indicator {
-    background: transparent;
-    bottom: 0;
-    color: transparent;
-    cursor: pointer;
-    height: auto;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: auto;
-}*/

@@ -31,7 +31,7 @@
         <div class="col-md-2"></div>
         <div class="col-md-10 content-holder">
           <h1>Quiproquand</h1>
-          <h2 id="ajd"></h2>
+          <span id="selected-date"><button class="act" id="prev-button"type="button" onclick="prevDate()"><-</button><h2 id="ajd"></h2><button class="deact" id="next-button" type="button" onclick="nextDate()" disabled>-></button></span>
           <div id="content" hidden>
               ...chargement...
 
@@ -44,6 +44,13 @@
   <script src="meetups.js"></script>
   <script src="js/index.js"></script>
   <script type="text/javascript">
+
+    const tdaytmp = new Date();
+
+    // DEBUG
+    const firstDay = new Date(2024,10,15);
+    // const firstDay = new Date(2024,11,2);
+
     
     $("#content").load(getDateAsFilename());
     console.log(getDateAsFilename());
@@ -64,6 +71,15 @@
 
       width = newWidth;
     };
+
+
+    const TODAY = new Date(tdaytmp.getFullYear(),tdaytmp.getMonth(),tdaytmp.getDate());
+    var tday = new Date(tdaytmp.getFullYear(),tdaytmp.getMonth(),tdaytmp.getDate());
+    
+    if (tday - firstDay <=0) {
+      deactivate(document.getElementById("prev-button"));
+    }
+
 
     // $(function() {
     //     $("#Datepicker").datepicker({

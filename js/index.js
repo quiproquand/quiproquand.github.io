@@ -29,15 +29,15 @@ function translateMonth(m) {
 	}
 }
 
-function getFrenchDateAsString() {
-	const today = new Date();
+function getFrenchDateAsString(today=new Date()) {
+	// const today = new Date();
 	return `${today.getDate()} ${translateMonth(today.getMonth())}`;								
 }
 
-function getDateAsFilename() {
+function getDateAsFilename(today = new Date(2024, 11, 2)) {
 	// const today = new Date();
 	// DEBUG ONLY
-	const today = new Date(2024, 11, 2);
+	// const today = new Date(2024, 11, 2);
 	
 	return `./${today.getMonth()+1}/${today.getDate()}.html`;
 }
@@ -69,4 +69,55 @@ function nbDaysBetween(date1, date2) {
 		count++;
 	}
 	return count;
+}
+
+function deactivate(button) {
+	button.classList.add("deact");
+	button.classList.remove("act");
+	button.disabled = true;
 }	
+
+function activate(button) {
+	button.classList.remove("deact");
+	button.classList.add("act");
+	button.disabled = false;
+}	
+
+function loadDate(tday = new Date()) {
+	$("#content").load(getDateAsFilename(tday));
+
+}
+
+
+function nextDate() {
+	activate(document.getElementById('prev-button'));
+	tday.setDate(tday.getDate()+1);
+	document.getElementById("ajd").innerHTML = getFrenchDateAsString(tday);
+	if (TODAY - tday <= 0) {
+		deactivate(document.getElementById('next-button'));
+	}
+	// loadDate(tday);
+}
+
+function prevDate() {
+	activate(document.getElementById('next-button'));
+	tday.setDate(tday.getDate()-1);
+	document.getElementById("ajd").innerHTML = getFrenchDateAsString(tday);
+	if (tday - firstDay <= 0 ) {
+		deactivate(document.getElementById('prev-button'));
+	}
+	// loadDate(tday);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
