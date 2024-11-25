@@ -25,7 +25,7 @@ Toutes les dates de rendez-vous (passés et futurs) sont stockées dans le fichi
     const MEETUPS = [new Date(2024,11,2),
                     new Date(2025,1,6]);
                     
-**<span style="color:red">Attention, les mois (contrairement aux jours) commencent à 0.</span>** Le 6 février 2025 se note donc `new Date(2025/1/6)`.
+**<span style="color:red">Attention, les mois (contrairement aux jours) commencent à 0.</span>** Le 6 février 2025 se note donc `new Date(2025,1,6)`.
 
 
 
