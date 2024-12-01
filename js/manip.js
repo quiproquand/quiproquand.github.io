@@ -13,10 +13,10 @@ var posts = document.getElementsByClassName("post");
 var cols = ["","",""];
 var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 $("div#lat-bar")[0].style.visibility = "hidden";
-if (width < 400) {
+if (width < thresholds[0]) {
 	cols = [""];
 }
-else if (width < 770) {
+else if (width < thresholds[1]) {
 	cols = ["",""];
 } else {
 	$("#lat-bar")[0].style.visibility = "visible";
@@ -65,13 +65,19 @@ $("div.imager").each(function(){
 		const rgb = buildRGB(imgData.data);
 		// console.log(rgb);
 		const quantizationRes = quantization(rgb,1)[0];
-		const lum = luminance(quantizationRes);
-		console.log(lum);
-		if (lum < 1) {
-			 this.classList.add("bright");
-		} else {
-			this.classList.add("dark");
-		}
+
+
+		// const lum = luminance(quantizationRes);
+		// console.log(lum);
+		// if (lum < 1) {
+		// 	 this.classList.add("bright");
+		// } else {
+		// 	this.classList.add("dark");
+		// }
+
+
+		this.classList.add(getColorClass(quantizationRes));
+
 		const divWidth = this.clientWidth;
 		this.style.height = `${divWidth/ratio.width*ratio.height}px`;
 	};

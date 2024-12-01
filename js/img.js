@@ -1,3 +1,6 @@
+const thresholds = [500,770];
+
+
 function buildRGB(imageData) {
   // console.log(imageData)
   const rgbValues = [];
@@ -94,7 +97,13 @@ function luminance(rgb){
     rgb[key] = c;
   }
   return 0.2126 * rgb.r + 0.7152 * rgb.g + 0.0722 * rgb.b;
+}
 
+function getColorClass(rgb) {
+  if ((rgb.r*0.299 + rgb.g*0.587 + rgb.b*0.114) > 186) {
+    return "dark";
+  }
+  return "bright";
 }
 
 
