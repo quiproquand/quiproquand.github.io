@@ -73,7 +73,7 @@ h1 {
 /*		padding: 4px;*/
 /*		z-index: 0!important;*/
 /*		padding-bottom: 3.5px;*/
-		font-weight: 1200;
+		font-weight: 900;
 
 	}
 	/*div.moko {
@@ -92,6 +92,7 @@ h1 {
 		margin-bottom: 10px;
 		margin-right:30px;
 		position:relative;
+		font-weight: 300;
 
 		/*div.date {
 			transform: rotate(90deg) translate(19px,-7px);

@@ -34,10 +34,10 @@ function getFrenchDateAsString(today=new Date()) {
 	return `${today.getDate()} ${translateMonth(today.getMonth())}`;								
 }
 
-function getDateAsFilename(today = new Date(2024, 11, 2)) {
-	// const today = new Date();
+function getDateAsFilename(today = new Date()) {
+
 	// DEBUG ONLY
-	// const today = new Date(2024, 11, 2);
+	// today = new Date(2024, 11, 4);
 	
 	return `./${today.getMonth()+1}/${today.getDate()}.html`;
 }
