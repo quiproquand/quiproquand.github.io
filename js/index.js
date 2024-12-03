@@ -37,7 +37,7 @@ function getFrenchDateAsString(today=new Date()) {
 function getDateAsFilename(today = new Date()) {
 
 	// DEBUG ONLY
-	//today = new Date(2024, 11, 2);
+	// today = new Date(2024, 11, 6);
 	
 	return `./${today.getMonth()+1}/${today.getDate()}.html`;
 }
@@ -57,7 +57,7 @@ function getDaysBeforeNextMeetups() {
 		}
 	}
 	if (nextMeetUp == null) {
-		return "JAMAIS ?!!?";
+		return "?!??";
 	}
 	return `${nbDaysBetween(today,nextMeetUp)} jour(s)`;
 }
@@ -96,7 +96,7 @@ function nextDate() {
 	if (TODAY - tday <= 0) {
 		deactivate(document.getElementById('next-button'));
 	}
-	// loadDate(tday);
+	loadDate(tday);
 }
 
 function prevDate() {
@@ -106,7 +106,7 @@ function prevDate() {
 	if (tday - firstDay <= 0 ) {
 		deactivate(document.getElementById('prev-button'));
 	}
-	// loadDate(tday);
+	loadDate(tday);
 
 }
 
