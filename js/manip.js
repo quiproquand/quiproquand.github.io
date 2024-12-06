@@ -80,6 +80,7 @@ $("div.imager").each(function(){
 
 		const divWidth = this.clientWidth;
 		this.style.height = `${divWidth/ratio.width*ratio.height}px`;
+		// this.load(window.location.href + " #content");
 	};
 	
 });
@@ -89,6 +90,8 @@ $(".content-column").each(function() {
 });
 
 content.hidden = false;
+
+
 
 
 
