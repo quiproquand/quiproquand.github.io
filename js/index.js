@@ -37,7 +37,7 @@ function getFrenchDateAsString(today=new Date()) {
 function getDateAsFilename(today = new Date()) {
 
 	// DEBUG ONLY
-	// today = new Date(2024, 11, 9);
+	// today = new Date(2024, 11, 12);
 	
 	return `./${today.getMonth()+1}/${today.getDate()}.html`;
 }
